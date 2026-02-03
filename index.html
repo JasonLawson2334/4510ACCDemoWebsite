@@ -3,140 +3,108 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Jason Lawson — Accounting student and aspiring accounting professional. Resume highlights, experience, skills, and contact." />
-  <title>Jason Lawson | Personal Website</title>
+  <meta name="description" content="Jason Lawson — Aspiring Accounting Professional. Resume highlights, experience, education, and skills." />
+  <title>Jason Lawson | Accounting</title>
 
   <style>
     :root{
-      --bg: #0b1020;
-      --panel: rgba(255,255,255,0.06);
-      --panel-2: rgba(255,255,255,0.09);
-      --text: rgba(255,255,255,0.92);
-      --muted: rgba(255,255,255,0.68);
-      --muted-2: rgba(255,255,255,0.56);
-      --border: rgba(255,255,255,0.14);
-      --shadow: 0 18px 70px rgba(0,0,0,0.35);
-      --accent: #7c3aed;   /* purple */
-      --accent2:#06b6d4;   /* cyan */
-      --good: #22c55e;
-      --radius: 18px;
-      --radius2: 26px;
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #0f172a;        /* slate-900 */
+      --muted: #475569;       /* slate-600 */
+      --muted2:#64748b;       /* slate-500 */
+      --border:#e2e8f0;       /* slate-200 */
+      --blue: #1d4ed8;        /* blue-700 */
+      --blue2:#2563eb;        /* blue-600 */
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --radius: 16px;
       --max: 1100px;
     }
 
-    @media (prefers-color-scheme: light) {
-      :root{
-        --bg: #f6f7fb;
-        --panel: rgba(0,0,0,0.04);
-        --panel-2: rgba(0,0,0,0.06);
-        --text: rgba(0,0,0,0.88);
-        --muted: rgba(0,0,0,0.62);
-        --muted-2: rgba(0,0,0,0.52);
-        --border: rgba(0,0,0,0.12);
-        --shadow: 0 14px 60px rgba(25,25,40,0.12);
-      }
-    }
-
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
+    *{ box-sizing: border-box; }
+    html,body{ height: 100%; }
     body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color: var(--text);
-      background:
-        radial-gradient(1200px 600px at 15% -10%, rgba(124,58,237,0.35), transparent 65%),
-        radial-gradient(900px 540px at 110% 10%, rgba(6,182,212,0.28), transparent 60%),
-        radial-gradient(800px 520px at 30% 110%, rgba(34,197,94,0.12), transparent 60%),
-        var(--bg);
-      line-height: 1.5;
+      background: linear-gradient(180deg, #eef2ff 0%, var(--bg) 30%, var(--bg) 100%);
+      line-height: 1.55;
     }
 
     a{ color: inherit; text-decoration: none; }
-    a:hover{ text-decoration: none; }
+    a:hover{ text-decoration: underline; text-underline-offset: 3px; }
 
-    /* Layout */
-    .wrap{ width:min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .wrap{ width:min(var(--max), calc(100% - 44px)); margin: 0 auto; }
+
+    /* Top nav */
     header{
       position: sticky;
       top: 0;
       z-index: 50;
-      backdrop-filter: blur(12px);
-      background: linear-gradient(to bottom, rgba(10,12,18,0.65), rgba(10,12,18,0.25));
+      backdrop-filter: blur(10px);
+      background: rgba(245,247,251,0.75);
       border-bottom: 1px solid var(--border);
     }
-    @media (prefers-color-scheme: light){
-      header{ background: linear-gradient(to bottom, rgba(246,247,251,0.80), rgba(246,247,251,0.55)); }
-    }
-
     .nav{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      padding: 14px 0;
       gap: 18px;
+      padding: 14px 0;
     }
     .brand{
       display:flex;
       align-items:center;
-      gap: 10px;
-      min-width: 220px;
+      gap: 12px;
+      min-width: 240px;
     }
-    .dot{
-      width: 12px; height: 12px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow: 0 0 0 6px rgba(124,58,237,0.14);
+    .mark{
+      width: 12px; height: 12px; border-radius: 4px;
+      background: linear-gradient(135deg, var(--blue), #0ea5e9);
+      box-shadow: 0 0 0 6px rgba(29,78,216,0.12);
     }
-    .brand strong{ font-weight: 700; letter-spacing: 0.2px; }
-    .brand span{ color: var(--muted); font-size: 0.92rem; }
+    .brand strong{ font-weight: 750; letter-spacing: -0.2px; }
+    .brand span{ display:block; color: var(--muted2); font-size: 0.92rem; }
 
-    .links{
-      display:flex; flex-wrap: wrap;
+    nav{
+      display:flex;
+      flex-wrap: wrap;
       gap: 10px;
       justify-content: flex-end;
     }
-    .pill{
-      padding: 9px 12px;
-      border: 1px solid var(--border);
+    .link{
+      padding: 8px 10px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.03);
       color: var(--muted);
-      font-size: 0.92rem;
-      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      border: 1px solid transparent;
+      font-size: 0.95rem;
+      transition: background .15s ease, border-color .15s ease;
     }
-    .pill:hover{
-      transform: translateY(-1px);
-      background: rgba(255,255,255,0.06);
-      border-color: rgba(255,255,255,0.22);
-      color: var(--text);
+    .link:hover{
+      background: #ffffff;
+      border-color: var(--border);
+      text-decoration: none;
     }
-    @media (prefers-color-scheme: light){
-      .pill{ background: rgba(255,255,255,0.55); }
-      .pill:hover{ background: rgba(255,255,255,0.85); border-color: rgba(0,0,0,0.18); }
-    }
-
-    main{ padding: 34px 0 70px; }
 
     /* Hero */
+    main{ padding: 28px 0 64px; }
     .hero{
       display:grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 24px;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 18px;
       align-items: stretch;
-      margin-top: 18px;
+      margin-top: 10px;
     }
-    @media (max-width: 900px){
+    @media (max-width: 920px){
       .hero{ grid-template-columns: 1fr; }
     }
 
     .card{
+      background: var(--card);
       border: 1px solid var(--border);
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
-      border-radius: var(--radius2);
+      border-radius: var(--radius);
       box-shadow: var(--shadow);
       overflow: hidden;
-    }
-    @media (prefers-color-scheme: light){
-      .card{ background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.65)); }
     }
 
     .hero-left{ padding: 26px; }
@@ -145,43 +113,42 @@
       align-items:center;
       gap: 10px;
       color: var(--muted);
-      font-size: 0.98rem;
+      font-size: 0.95rem;
     }
-    .badge{
+    .pill{
       display:inline-flex;
       align-items:center;
       gap: 8px;
       padding: 6px 10px;
-      border: 1px solid var(--border);
       border-radius: 999px;
-      background: rgba(255,255,255,0.03);
-      font-size: 0.9rem;
+      border: 1px solid var(--border);
+      background: #f8fafc;
       color: var(--muted);
+      font-size: 0.9rem;
     }
-    .badge i{
-      width: 10px; height: 10px; border-radius: 50%;
-      background: var(--good);
-      box-shadow: 0 0 0 6px rgba(34,197,94,0.12);
+    .dot{
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--blue2);
     }
 
     h1{
       margin: 10px 0 8px;
-      font-size: clamp(2rem, 4vw, 3.1rem);
-      line-height: 1.08;
-      letter-spacing: -0.7px;
+      font-size: clamp(1.95rem, 3.3vw, 2.7rem);
+      letter-spacing: -0.8px;
+      line-height: 1.12;
     }
     .subtitle{
       margin: 0 0 16px;
       color: var(--muted);
-      font-size: 1.06rem;
-      max-width: 60ch;
+      max-width: 68ch;
+      font-size: 1.02rem;
     }
 
-    .cta-row{
+    .cta{
       display:flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 18px;
+      gap: 10px;
+      margin-top: 16px;
     }
     .btn{
       display:inline-flex;
@@ -189,178 +156,120 @@
       justify-content:center;
       gap: 10px;
       padding: 11px 14px;
-      border-radius: 14px;
+      border-radius: 12px;
       border: 1px solid var(--border);
-      background: rgba(255,255,255,0.04);
+      background: #ffffff;
       color: var(--text);
-      font-weight: 600;
-      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      font-weight: 650;
+      transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
     }
     .btn:hover{
       transform: translateY(-1px);
-      background: rgba(255,255,255,0.07);
-      border-color: rgba(255,255,255,0.26);
+      border-color: #cbd5e1;
+      box-shadow: 0 8px 20px rgba(15,23,42,0.08);
+      text-decoration: none;
     }
     .btn.primary{
-      border: 0;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      background: var(--blue);
+      border-color: var(--blue);
       color: white;
-      box-shadow: 0 12px 38px rgba(124,58,237,0.25);
     }
     .btn.primary:hover{
-      transform: translateY(-1px);
-      filter: brightness(1.03);
+      box-shadow: 0 10px 24px rgba(29,78,216,0.24);
+      filter: brightness(1.02);
     }
 
-    .meta{
+    .facts{
       display:grid;
       grid-template-columns: 1fr 1fr;
       gap: 10px;
       margin-top: 18px;
     }
     @media (max-width: 520px){
-      .meta{ grid-template-columns: 1fr; }
+      .facts{ grid-template-columns: 1fr; }
     }
-    .meta .item{
+    .fact{
       padding: 12px 14px;
-      border-radius: 16px;
       border: 1px solid var(--border);
-      background: rgba(255,255,255,0.03);
+      border-radius: 14px;
+      background: #f8fafc;
       color: var(--muted);
       font-size: 0.95rem;
     }
-    .meta .item strong{ color: var(--text); font-weight: 650; }
+    .fact strong{ color: var(--text); font-weight: 700; }
 
-    /* Photo card */
-    .hero-right{
-      display:flex;
-      flex-direction: column;
-      min-height: 100%;
-    }
-    .photo{
-      position: relative;
+    /* Right card */
+    .hero-right .photo{
       aspect-ratio: 4 / 3;
-      width: 100%;
-      background: rgba(255,255,255,0.04);
+      background: #e2e8f0;
       border-bottom: 1px solid var(--border);
       overflow:hidden;
     }
-    .photo img{
+    .hero-right img{
       width:100%;
       height:100%;
       object-fit: cover;
       display:block;
-      filter: saturate(1.05);
-      transform: scale(1.01);
+      filter: saturate(1.02) contrast(1.02);
     }
-    .photo::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background: radial-gradient(400px 240px at 20% 10%, rgba(124,58,237,0.20), transparent 60%),
-                  radial-gradient(480px 280px at 110% 25%, rgba(6,182,212,0.20), transparent 60%),
-                  linear-gradient(to top, rgba(0,0,0,0.28), transparent 55%);
-      pointer-events:none;
+    .side{
+      padding: 18px;
     }
-    @media (prefers-color-scheme: light){
-      .photo::after{ background: linear-gradient(to top, rgba(0,0,0,0.14), transparent 60%); }
-    }
-
-    .quick{
-      padding: 18px 18px 20px;
-    }
-    .quick h2{
+    .side h2{
       margin: 0 0 8px;
-      font-size: 1.06rem;
+      font-size: 1.05rem;
       letter-spacing: -0.2px;
     }
-    .quick p{
-      margin: 0 0 12px;
+    .side p{
+      margin: 0;
       color: var(--muted);
       font-size: 0.98rem;
     }
 
-    .stats{
+    .side .mini-grid{
       display:grid;
       grid-template-columns: 1fr 1fr;
       gap: 10px;
       margin-top: 12px;
     }
-    .stat{
+    .mini{
       padding: 12px 14px;
-      border-radius: 16px;
+      border-radius: 14px;
       border: 1px solid var(--border);
-      background: rgba(255,255,255,0.03);
+      background: #f8fafc;
     }
-    .stat .num{
-      font-weight: 750;
-      letter-spacing: -0.4px;
-      font-size: 1.05rem;
-    }
-    .stat .lbl{
-      color: var(--muted);
-      font-size: 0.92rem;
-      margin-top: 2px;
-    }
+    .mini .t{ font-weight: 750; letter-spacing: -0.2px; }
+    .mini .d{ color: var(--muted2); font-size: 0.92rem; margin-top: 2px; }
 
     /* Sections */
-    section{ margin-top: 26px; }
+    section{ margin-top: 22px; }
     .section-head{
       display:flex;
       align-items:flex-end;
       justify-content: space-between;
       gap: 14px;
-      margin: 26px 0 12px;
+      margin: 22px 0 10px;
     }
     .section-head h3{
       margin: 0;
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       letter-spacing: -0.2px;
     }
     .section-head p{
-      margin:0;
-      color: var(--muted);
+      margin: 0;
+      color: var(--muted2);
       font-size: 0.95rem;
     }
 
-    .grid-3{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-    @media (max-width: 900px){
-      .grid-3{ grid-template-columns: 1fr; }
-    }
-    .mini{
-      padding: 16px;
+    .block{
+      padding: 18px;
       border-radius: var(--radius);
       border: 1px solid var(--border);
-      background: rgba(255,255,255,0.03);
-    }
-    .mini h4{
-      margin:0 0 6px;
-      font-size: 1.02rem;
-      letter-spacing: -0.2px;
-    }
-    .mini p{ margin:0; color: var(--muted); font-size: 0.95rem; }
-    .mini .tag{
-      display:inline-block;
-      margin-top: 10px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 0.9rem;
-      background: rgba(255,255,255,0.02);
+      background: var(--card);
+      box-shadow: var(--shadow);
     }
 
-    /* Experience */
-    .timeline{
-      padding: 18px;
-      border-radius: var(--radius2);
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.03);
-    }
+    /* Experience list */
     .role{
       display:grid;
       grid-template-columns: 160px 1fr;
@@ -368,14 +277,15 @@
       padding: 14px 0;
       border-top: 1px solid var(--border);
     }
-    .role:first-child{ border-top: 0; padding-top: 0; }
-    @media (max-width: 700px){
+    .role:first-child{ border-top: none; padding-top: 0; }
+    @media (max-width: 740px){
       .role{ grid-template-columns: 1fr; }
     }
     .when{
-      color: var(--muted-2);
-      font-weight: 650;
+      color: var(--muted2);
+      font-weight: 700;
       font-size: 0.95rem;
+      white-space: nowrap;
     }
     .who{
       display:flex;
@@ -385,45 +295,35 @@
       justify-content: space-between;
     }
     .who strong{
-      font-size: 1.05rem;
+      font-size: 1.02rem;
       letter-spacing: -0.2px;
     }
     .who span{
       color: var(--muted);
       font-size: 0.95rem;
-      font-weight: 600;
+      font-weight: 650;
     }
-    ul{
-      margin: 10px 0 0 18px;
-      color: var(--muted);
-    }
+    ul{ margin: 10px 0 0 18px; color: var(--muted); }
     li{ margin: 6px 0; }
 
-    /* Skills */
-    .chips{
-      display:flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      padding: 16px;
-      border-radius: var(--radius2);
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.03);
-    }
+    /* Skills chips */
+    .chips{ display:flex; flex-wrap: wrap; gap: 10px; }
     .chip{
       padding: 8px 12px;
       border-radius: 999px;
       border: 1px solid var(--border);
-      background: rgba(255,255,255,0.02);
-      font-weight: 650;
+      background: #f8fafc;
       color: var(--muted);
+      font-weight: 650;
       font-size: 0.93rem;
     }
 
+    /* Footer */
     footer{
-      margin-top: 36px;
-      padding-top: 18px;
+      margin-top: 28px;
+      padding-top: 16px;
       border-top: 1px solid var(--border);
-      color: var(--muted-2);
+      color: var(--muted2);
       font-size: 0.92rem;
       display:flex;
       flex-wrap: wrap;
@@ -432,17 +332,13 @@
       justify-content: space-between;
     }
 
-    /* Small helper for icons */
-    .ico{
-      width: 16px; height: 16px;
-      display:inline-block;
-      vertical-align: -3px;
-      opacity: 0.92;
-    }
+    /* Small icon helper */
+    .ico{ width: 16px; height: 16px; display:inline-block; vertical-align: -3px; }
+    .muted-link{ color: var(--muted2); }
+    .muted-link:hover{ color: var(--text); }
 
-    /* Reduce motion */
     @media (prefers-reduced-motion: reduce){
-      *{ transition:none !important; scroll-behavior:auto !important; }
+      *{ scroll-behavior:auto !important; transition:none !important; }
     }
   </style>
 </head>
@@ -452,19 +348,19 @@
     <div class="wrap">
       <div class="nav">
         <a class="brand" href="#top" aria-label="Go to top">
-          <span class="dot" aria-hidden="true"></span>
+          <span class="mark" aria-hidden="true"></span>
           <div>
-            <strong>Jason Lawson</strong><br/>
+            <strong>Jason Lawson</strong>
             <span>Aspiring Accounting Professional</span>
           </div>
         </a>
 
-        <nav class="links" aria-label="Site navigation">
-          <a class="pill" href="#highlights">Highlights</a>
-          <a class="pill" href="#experience">Experience</a>
-          <a class="pill" href="#education">Education</a>
-          <a class="pill" href="#skills">Skills</a>
-          <a class="pill" href="#contact">Contact</a>
+        <nav aria-label="Sections">
+          <a class="link" href="#summary">Summary</a>
+          <a class="link" href="#experience">Experience</a>
+          <a class="link" href="#education">Education</a>
+          <a class="link" href="#skills">Skills</a>
+          <a class="link" href="#contact">Contact</a>
         </nav>
       </div>
     </div>
@@ -477,21 +373,21 @@
       <div class="hero">
         <div class="card hero-left">
           <div class="kicker">
-            <span class="badge"><i aria-hidden="true"></i> Available for internships / entry-level roles</span>
+            <span class="pill"><span class="dot" aria-hidden="true"></span>Open to accounting internships & entry-level roles</span>
           </div>
 
-          <h1>Detail-oriented. Analytical. Ready to contribute.</h1>
+          <h1>Accounting-focused, analytical, and process-driven.</h1>
           <p class="subtitle">
-            I’m an accounting student with strong problem-solving skills, bilingual Spanish communication,
-            and hands-on experience across IT, customer-facing roles, and leadership.
+            Detail-oriented and results-driven aspiring accounting professional with strong analytical and problem-solving skills.
+            Bilingual in Spanish and proficient in Excel, with experience in IT, sales, leadership, and customer service.
           </p>
 
-          <div class="cta-row">
-            <a class="btn primary" href="#contact" title="Jump to contact section">
+          <div class="cta">
+            <a class="btn primary" href="#contact" title="Jump to contact">
               <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M21 8v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8m18 0a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2m18 0-9 6-9-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-              Contact Me
+              Contact
             </a>
 
             <a class="btn" href="mailto:Jasonlawson2334@gmail.com">
@@ -510,8 +406,8 @@
               Call
             </a>
 
-            <!-- Optional: add a PDF resume to your repo and update this link -->
-            <a class="btn" href="Resume.pdf" title="Upload a Resume.pdf to your repo to enable this">
+            <!-- Optional: upload Resume.pdf to repo root and this link will work -->
+            <a class="btn" href="Resume.pdf" title="Upload Resume.pdf to repo root to enable">
               <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Z" stroke="currentColor" stroke-width="2"/>
                 <path d="M14 2v6h6" stroke="currentColor" stroke-width="2"/>
@@ -521,73 +417,61 @@
             </a>
           </div>
 
-          <div class="meta" aria-label="Quick facts">
-            <div class="item"><strong>Location:</strong> North Ogden, UT</div>
-            <div class="item"><strong>Graduation:</strong> April 2026 (B.S. Accounting)</div>
-            <div class="item"><strong>Strengths:</strong> Excel • Analysis • Multitasking</div>
-            <div class="item"><strong>Languages:</strong> English • Spanish (Bilingual)</div>
+          <div class="facts" aria-label="Quick facts">
+            <div class="fact"><strong>Location:</strong> North Ogden, Utah</div>
+            <div class="fact"><strong>Education:</strong> B.S. Accounting (Expected Apr 2026)</div>
+            <div class="fact"><strong>Core Tools:</strong> Excel • Financial Analysis</div>
+            <div class="fact"><strong>Languages:</strong> English • Spanish (Bilingual)</div>
           </div>
         </div>
 
         <div class="card hero-right">
-          <div class="photo" aria-label="Profile image">
-            <!-- Your repo image: "Dog pic.jpg"
-                 URL-encoded space: Dog%20pic.jpg -->
+          <div class="photo" aria-label="Photo">
+            <!-- Repo image: "Dog pic.jpg" -->
             <img src="Dog%20pic.jpg" alt="Photo" />
           </div>
-
-          <div class="quick">
-            <h2>What I bring</h2>
+          <div class="side">
+            <h2>Professional snapshot</h2>
             <p>
-              A calm, solutions-first approach — whether I’m troubleshooting devices, supporting customers,
-              or leading teams through challenges.
+              Currently pursuing a Bachelor’s in Accounting at Utah Valley University (expected April 2026).
+              Experience includes high-pressure IT operations support, client-facing sales, and team leadership.
             </p>
 
-            <div class="stats" role="list" aria-label="Top strengths">
-              <div class="stat" role="listitem">
-                <div class="num">Analytical</div>
-                <div class="lbl">Fast problem diagnosis</div>
+            <div class="mini-grid" role="list" aria-label="Highlights">
+              <div class="mini" role="listitem">
+                <div class="t">Detail & accuracy</div>
+                <div class="d">Process discipline</div>
               </div>
-              <div class="stat" role="listitem">
-                <div class="num">Reliable</div>
-                <div class="lbl">Detail & process focus</div>
+              <div class="mini" role="listitem">
+                <div class="t">Problem solving</div>
+                <div class="d">Calm under pressure</div>
               </div>
-              <div class="stat" role="listitem">
-                <div class="num">People-first</div>
-                <div class="lbl">Communication & conflict resolution</div>
+              <div class="mini" role="listitem">
+                <div class="t">Leadership</div>
+                <div class="d">Conflict resolution</div>
               </div>
-              <div class="stat" role="listitem">
-                <div class="num">Bilingual</div>
-                <div class="lbl">Spanish + English</div>
+              <div class="mini" role="listitem">
+                <div class="t">Communication</div>
+                <div class="d">Bilingual Spanish</div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- HIGHLIGHTS -->
-      <section id="highlights">
+      <!-- SUMMARY -->
+      <section id="summary">
         <div class="section-head">
-          <h3>Highlights</h3>
-          <p>Key strengths + the kind of work I’m looking for.</p>
+          <h3>Summary</h3>
+          <p>What I’m aiming for and how I work.</p>
         </div>
 
-        <div class="grid-3">
-          <div class="mini">
-            <h4>Accounting-ready mindset</h4>
-            <p>Detail-oriented work habits with strong analytical thinking and problem-solving.</p>
-            <span class="tag">Audit-minded • Accurate • Organized</span>
-          </div>
-          <div class="mini">
-            <h4>Excel + technical comfort</h4>
-            <p>Comfortable with spreadsheets and systems, plus real IT troubleshooting experience.</p>
-            <span class="tag">Excel • Data • Systems</span>
-          </div>
-          <div class="mini">
-            <h4>Leadership & communication</h4>
-            <p>Team leadership experience and confident communication with diverse groups.</p>
-            <span class="tag">Leadership • Service • Conflict resolution</span>
-          </div>
+        <div class="block">
+          <p style="margin:0; color: var(--muted);">
+            Detail-oriented and results-driven aspiring accounting professional with strong analytical and problem-solving skills.
+            Bilingual in Spanish and proficient in Excel, with experience in IT, sales, leadership, and customer service.
+            Adept at multitasking, conflict resolution, and working effectively with diverse teams.
+          </p>
         </div>
       </section>
 
@@ -595,10 +479,10 @@
       <section id="experience">
         <div class="section-head">
           <h3>Experience</h3>
-          <p>Recent roles and what I accomplished.</p>
+          <p>Roles and measurable responsibilities.</p>
         </div>
 
-        <div class="timeline">
+        <div class="block">
           <div class="role">
             <div class="when">2024 – Present</div>
             <div>
@@ -607,9 +491,9 @@
                 <span>IT Support / Operations</span>
               </div>
               <ul>
-                <li>Prepared, maintained, and troubleshot devices to keep operations running smoothly.</li>
-                <li>Diagnosed issues quickly and built effective solutions under pressure.</li>
-                <li>Handled conflicts and problems professionally in a high-stakes environment.</li>
+                <li>Prepared, maintained, and troubleshot devices to support operational efficiency.</li>
+                <li>Analyzed issues quickly and implemented effective technical solutions.</li>
+                <li>Resolved conflicts and problems professionally in a high-pressure environment.</li>
               </ul>
             </div>
           </div>
@@ -622,9 +506,9 @@
                 <span>Sales Associate</span>
               </div>
               <ul>
-                <li>Communicated complex information clearly to a wide range of customers.</li>
-                <li>Built strong customer relationships and positive experiences.</li>
-                <li>Managed multiple tasks at once with adaptability and efficiency.</li>
+                <li>Communicated complex information effectively to a diverse clientele.</li>
+                <li>Strengthened customer relationships through service-focused communication.</li>
+                <li>Managed multiple tasks simultaneously, demonstrating adaptability and efficiency.</li>
               </ul>
             </div>
           </div>
@@ -637,9 +521,9 @@
                 <span>Team Lead • Youth Mentor • Night Security</span>
               </div>
               <ul>
-                <li>Led teams through problem-solving and conflict resolution in challenging situations.</li>
-                <li>Mentored youth, providing support and positive reinforcement.</li>
-                <li>Maintained attention to detail and strict protocol adherence for safety and security.</li>
+                <li>Led teams through problem-solving and conflict resolution.</li>
+                <li>Provided mentorship and guidance in challenging situations.</li>
+                <li>Maintained vigilance and adherence to protocols to ensure safety and security.</li>
               </ul>
             </div>
           </div>
@@ -653,7 +537,7 @@
               </div>
               <ul>
                 <li>Handled cash transactions accurately and efficiently.</li>
-                <li>Delivered customer service and ensured a positive guest experience.</li>
+                <li>Provided customer service and ensured a positive guest experience.</li>
               </ul>
             </div>
           </div>
@@ -664,37 +548,39 @@
       <section id="education">
         <div class="section-head">
           <h3>Education</h3>
-          <p>Degree + coursework focus.</p>
+          <p>Degree and coursework.</p>
         </div>
 
-        <div class="card" style="padding:18px;">
-          <div class="who" style="margin-bottom:8px;">
+        <div class="block">
+          <div class="who">
             <strong>Utah Valley University</strong>
             <span>Bachelor’s Degree in Accounting • Expected April 2026</span>
           </div>
-          <div style="color:var(--muted);">
+          <p style="margin: 10px 0 0; color: var(--muted);">
             Relevant coursework: Financial &amp; Managerial Accounting, Excel for Business, Business Communications
-          </div>
+          </p>
         </div>
       </section>
 
       <!-- SKILLS -->
       <section id="skills">
         <div class="section-head">
-          <h3>Skills & Certifications</h3>
-          <p>Tools, strengths, and credentials.</p>
+          <h3>Skills</h3>
+          <p>Technical and professional capabilities.</p>
         </div>
 
-        <div class="chips" aria-label="Skill chips">
-          <span class="chip">Microsoft Excel</span>
-          <span class="chip">Financial Analysis</span>
-          <span class="chip">IT Troubleshooting</span>
-          <span class="chip">Communication</span>
-          <span class="chip">Leadership</span>
-          <span class="chip">Conflict Resolution</span>
-          <span class="chip">Multitasking</span>
-          <span class="chip">Spanish (Bilingual)</span>
-          <span class="chip">Eagle Scout</span>
+        <div class="block">
+          <div class="chips" aria-label="Skill chips">
+            <span class="chip">Microsoft Excel</span>
+            <span class="chip">Financial Analysis</span>
+            <span class="chip">IT Troubleshooting</span>
+            <span class="chip">Communication</span>
+            <span class="chip">Leadership</span>
+            <span class="chip">Conflict Resolution</span>
+            <span class="chip">Multitasking</span>
+            <span class="chip">Spanish (Bilingual)</span>
+            <span class="chip">Eagle Scout</span>
+          </div>
         </div>
       </section>
 
@@ -702,41 +588,44 @@
       <section id="contact">
         <div class="section-head">
           <h3>Contact</h3>
-          <p>Fastest ways to reach me.</p>
+          <p>Direct and professional.</p>
         </div>
 
-        <div class="card" style="padding: 18px;">
-          <div class="meta" style="margin-top:0;">
-            <div class="item"><strong>Email:</strong> <a href="mailto:Jasonlawson2334@gmail.com">Jasonlawson2334@gmail.com</a></div>
-            <div class="item"><strong>Phone:</strong> <a href="tel:+13852989547">385-298-9547</a></div>
-            <div class="item"><strong>Location:</strong> North Ogden, Utah</div>
-            <div class="item"><strong>Focus:</strong> Accounting • Analytics • Service</div>
+        <div class="block">
+          <div class="facts" style="margin-top:0;">
+            <div class="fact">
+              <strong>Email:</strong>
+              <a class="muted-link" href="mailto:Jasonlawson2334@gmail.com">Jasonlawson2334@gmail.com</a>
+            </div>
+            <div class="fact">
+              <strong>Phone:</strong>
+              <a class="muted-link" href="tel:+13852989547">385-298-9547</a>
+            </div>
+            <div class="fact"><strong>Location:</strong> North Ogden, Utah</div>
+            <div class="fact"><strong>Focus:</strong> Accounting • Analysis • Service</div>
           </div>
 
-          <div class="cta-row" style="margin-top:16px;">
-            <a class="btn primary" href="mailto:Jasonlawson2334@gmail.com?subject=Website%20Inquiry%20-%20Jason%20Lawson">
-              Email me
-            </a>
+          <div class="cta" style="margin-top: 14px;">
+            <a class="btn primary" href="mailto:Jasonlawson2334@gmail.com?subject=Website%20Inquiry%20-%20Jason%20Lawson">Email me</a>
             <a class="btn" href="tel:+13852989547">Call</a>
-            <!-- Add your LinkedIn URL if you have one -->
-            <a class="btn" href="#" onclick="alert('Add your LinkedIn link by replacing # in index.html'); return false;">LinkedIn (add link)</a>
+            <!-- Add your LinkedIn URL below -->
+            <a class="btn" href="#" onclick="alert('Replace this link with your LinkedIn URL in index.html'); return false;">LinkedIn</a>
           </div>
         </div>
       </section>
 
       <footer>
-        <div>© <span id="y"></span> Jason Lawson • Built as a single-file GitHub Pages site</div>
-        <div style="color:var(--muted);">Tip: add <strong>Resume.pdf</strong> to your repo root to enable the “Resume (PDF)” button.</div>
+        <div>© <span id="y"></span> Jason Lawson</div>
+        <div>Minimal one-page site • Blue &amp; gray palette</div>
       </footer>
 
     </div>
   </main>
 
   <script>
-    // Set footer year
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // Smooth scroll for in-page links
+    // Smooth scroll for section links
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', (e) => {
         const id = a.getAttribute('href');
